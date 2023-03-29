@@ -1,0 +1,22 @@
+datasource db {
+  provider = "postgres"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["linux-musl-arm64-openssl-3.0.x"]
+}
+
+model Position {
+  id String @id
+  x  Float
+  y  Float
+  z  Float
+  r  Float
+  j1 Float
+  j2 Float
+  j3 Float
+  j4 Float
+  created_at DateTime @default(now())
+}
