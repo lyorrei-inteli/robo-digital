@@ -12,6 +12,14 @@ Essa api consiste nas seguintes rotas:
     <li>get "/dobot/store_position": Rota que se conecta com a api em flask que consegue a informação da posição diretamente com o robô</li>
     <li>post "/store_position": Rota que armazena uma nova posição diretamente no banco de dados com as informações que chegaram no req.body (x, y, z, r, j1, j2, j3)</li>
 </ul>
+
+Caso você queira rodar a api em nestjs, é necessário adicionar um arquivo .env no diretório /api com o seguintes variáveis:
+
+```
+DATABASE_URL="postgres://example_user:example_password@postgres:5432/robo-digital"
+DOBOT_SERVER_URL="http://dobot:3001"
+```
+
 <hr/>
 
 <h2>/dobot</h2>
@@ -22,8 +30,8 @@ Essa api consiste na seguinte rota:
 <ul>
     <li>get "/get_position": Rota que se conecta com o robô (ligado via cabo) e retorna a informação de sua posição.</li>
 </ul>
-<hr/>
 
+<hr/>
 
 <h2>/godot</h2>
 O diretório /godot contém o frontend do projeto, desenvolvido em Godot. Ele contém um botão que executa uma solicitação para uma rota da API em NestJS para recuperar a última posição do robô armazenada no banco de dados e mostra essa informação na tela.
