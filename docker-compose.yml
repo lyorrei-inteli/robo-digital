@@ -1,0 +1,30 @@
+version: "3"
+services:
+  api:
+    build: $PWD/api
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+      - $PWD/api:/api
+  dobot:
+    build: $PWD/dobot
+    ports:
+      - "3001:3001"
+    restart: always
+    volumes:
+    - $PWD/dobot:/dobot
+  postgres:
+    image: postgres
+    ports: 
+      - "5432:5432"
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: example_password
+      POSTGRES_USER: example_user
+      POSTGRES_DB: robo-digital
+    volumes:
+      - postgres:/var/lib/postgresql/data
+
+volumes:
+  postgres:
