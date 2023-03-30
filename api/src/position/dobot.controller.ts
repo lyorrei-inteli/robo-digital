@@ -28,7 +28,7 @@ export class PositionController {
   async lastPosition() {
     const position = await this.prisma.position.findMany({
       orderBy: {
-        id: 'desc',
+        created_at: 'desc',
       },
       take: 1,
     });

@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Node2D.gd" type="Script" id=1]
+
+[sub_resource type="Gradient" id=3]
+colors = PoolColorArray( 1, 0, 0, 1, 1, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 3 )
+width = 20
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -10,17 +17,17 @@ margin_right = 1027.0
 margin_bottom = 602.0
 
 [node name="Button" type="Button" parent="."]
-margin_left = 466.0
-margin_top = 523.0
-margin_right = 593.0
-margin_bottom = 565.0
+margin_left = 457.0
+margin_top = 526.0
+margin_right = 584.0
+margin_bottom = 568.0
 text = "Get position"
 
 [node name="Joints" type="ColorRect" parent="."]
-margin_left = 157.0
-margin_top = 102.0
-margin_right = 456.0
-margin_bottom = 340.0
+margin_left = 42.0
+margin_top = 32.0
+margin_right = 341.0
+margin_bottom = 270.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="Label" type="Label" parent="Joints"]
@@ -75,10 +82,10 @@ margin_bottom = 189.0
 rect_pivot_offset = Vector2( -373, -142 )
 
 [node name="Position" type="ColorRect" parent="."]
-margin_left = 582.0
-margin_top = 105.0
-margin_right = 881.0
-margin_bottom = 343.0
+margin_left = 692.0
+margin_top = 32.0
+margin_right = 991.0
+margin_bottom = 270.0
 rect_pivot_offset = Vector2( -1125, 53 )
 color = Color( 0, 0, 0, 1 )
 
@@ -100,10 +107,10 @@ rect_pivot_offset = Vector2( -373, -142 )
 text = "X:"
 
 [node name="x" type="Label" parent="Position"]
-margin_left = 145.0
-margin_top = 55.0
-margin_right = 185.0
-margin_bottom = 69.0
+margin_left = 144.0
+margin_top = 53.0
+margin_right = 184.0
+margin_bottom = 67.0
 rect_pivot_offset = Vector2( -373, -142 )
 
 [node name="y Label" type="Label" parent="Position"]
@@ -116,9 +123,9 @@ text = "Y:"
 
 [node name="y" type="Label" parent="Position"]
 margin_left = 144.0
-margin_top = 133.0
+margin_top = 88.0
 margin_right = 184.0
-margin_bottom = 147.0
+margin_bottom = 102.0
 rect_pivot_offset = Vector2( -373, -142 )
 
 [node name="z Label" type="Label" parent="Position"]
@@ -130,10 +137,10 @@ rect_pivot_offset = Vector2( -373, -142 )
 text = "Z:"
 
 [node name="z" type="Label" parent="Position"]
-margin_left = 144.0
-margin_top = 174.0
-margin_right = 184.0
-margin_bottom = 188.0
+margin_left = 149.0
+margin_top = 175.0
+margin_right = 189.0
+margin_bottom = 189.0
 rect_pivot_offset = Vector2( -373, -142 )
 
 [node name="r Label" type="Label" parent="Position"]
@@ -146,9 +153,9 @@ text = "R:"
 
 [node name="r" type="Label" parent="Position"]
 margin_left = 145.0
-margin_top = 92.0
+margin_top = 134.0
 margin_right = 185.0
-margin_bottom = 106.0
+margin_bottom = 148.0
 rect_pivot_offset = Vector2( -373, -142 )
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
@@ -159,6 +166,31 @@ margin_top = 525.0
 margin_right = 953.0
 margin_bottom = 567.0
 text = "Clear"
+
+[node name="Simulation" type="ColorRect" parent="."]
+margin_left = 364.0
+margin_top = 190.0
+margin_right = 667.0
+margin_bottom = 493.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Dobot" type="ColorRect" parent="Simulation"]
+margin_left = 130.0
+margin_top = 126.0
+margin_right = 183.0
+margin_bottom = 179.0
+
+[node name="Label" type="Label" parent="Simulation"]
+margin_left = 136.0
+margin_top = 107.0
+margin_right = 176.0
+margin_bottom = 121.0
+text = "Dobot"
+
+[node name="Hook" type="Sprite" parent="Simulation"]
+position = Vector2( 156.75, 153.062 )
+scale = Vector2( 1.025, 20.125 )
+texture = SubResource( 2 )
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
