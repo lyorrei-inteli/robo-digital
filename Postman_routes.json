@@ -1,0 +1,85 @@
+{
+	"info": {
+		"_postman_id": "4f33427d-8b63-4f64-af17-25d4f031303d",
+		"name": "Dobot-robot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17956691"
+	},
+	"item": [
+		{
+			"name": "Get position",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3005/get_position",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"get_position"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get last position",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Store position",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"x\": 10,\n    \"y\": 20,\n    \"z\": 45,\n    \"r\": 12\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/store_position",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"store_position"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Store dobot position",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/dobot/store_position",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dobot",
+						"store_position"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

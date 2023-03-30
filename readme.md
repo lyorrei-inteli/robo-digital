@@ -1,5 +1,5 @@
 <h1>Projeto de Arquitetura para Robô</h1>
-Este projeto tem como objetivo armazenar e monitorar a posição do robô em um banco de dados Postgres e permitir a conexão com o robô para recuperar sua posição atual. Ele consiste em três diretórios principais: /api, /dobot e /godot.
+Este projeto tem como objetivo armazenar e monitorar a posição do robô em um banco de dados Postgres e permitir a conexão com o robô para recuperar sua posição atual. Ele consiste em três diretórios principais: /api, /dobot e /godot. Coloquei também um arquivo chamado Postman_routes.json na root do projeto para facilitar a testagem de todas as rotas definidas na aplicação.
 <hr/>
 <h2>/api</h2>
 O diretório /api contém uma API em NestJS com Prisma, que se conecta a um banco de dados Postgres. A API permite que as coordenadas e a posição das juntas do robô sejam armazenadas diretamente por meio da conexão com o robô ou por meio de uma solicitação de um cliente. O diretório /api contém um arquivo Dockerfile para criar um container para a API. Ela fica aberta na porta 3000.
